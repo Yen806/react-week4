@@ -35,7 +35,7 @@ function ProductPage({setIsAuth}) {
             setProducts(res.data.products);
             getPageInfo(res.data.pagination)
         } catch (error) {
-            alert('取得資料失敗')
+            alert('取得資料失敗'|| res.data.message)
         }
     }
     //確認是否登入
@@ -55,11 +55,6 @@ function ProductPage({setIsAuth}) {
             checkLogin()
         }
     }, [])
-
-
-
-    
-    
     
     const openModal = (mode, product) => {
         setModalMode(mode);
@@ -84,6 +79,7 @@ function ProductPage({setIsAuth}) {
     const btnChangePage = (page) => {
         getProductList(page);
     }
+    
     return (<>
         <div className="container mt-5" >
             <div className="row">

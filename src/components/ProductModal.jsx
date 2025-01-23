@@ -49,8 +49,6 @@ function ProductModal({ modalMode, tempProduct, getProductList, setTempProduct, 
         }
 
     }
-
-
     //上傳圖片
     const fileUpload = async (e) => {
         const file = e.target.files[0];
@@ -64,7 +62,7 @@ function ProductModal({ modalMode, tempProduct, getProductList, setTempProduct, 
                 imageUrl: upLoadImgUrl
             })
         } catch (error) {
-
+            alert(res.data.message)
         }
     }
     //表單控制
